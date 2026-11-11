@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 1: Khái Niệm Avidyā Và Māyā - Sườn Bài 5</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #050714;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(112, 0, 255, 0.22) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(0, 212, 255, 0.18) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(15, 10, 35, 0.95) 0%, #03050c 100%);
+            background-attachment: fixed;
+            color: #e2e8f0;
+            line-height: 1.85;
+            padding: 40px 20px;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng nền sao vũ trụ */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 90px 40px, rgba(255,255,255,0.9), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 160px 120px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 230px 190px, rgba(168, 85, 247, 0.9), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 310px 250px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 450px 120px, rgba(56, 189, 248, 0.9), rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 500px 500px;
+            opacity: 0.65;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Main Essay Card */
+        .essay-card {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 24px;
+            padding: 45px 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(112, 0, 255, 0.12);
+        }
+
+        /* Section Header */
+        .section-badge {
+            display: inline-block;
+            padding: 6px 18px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+
+        h1.chapter-main-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 0%, #c084fc 50%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            line-height: 1.35;
+        }
+
+        h2.section-sub-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #38bdf8;
+            margin: 35px 0 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3.part-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #c084fc;
+            margin: 22px 0 12px 0;
+        }
+
+        /* Content Paragraphs */
+        p.content-p {
+            font-size: 1.02rem;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* Superscript styling for footnote references */
+        sup {
+            color: #38bdf8;
+            font-weight: 700;
+            font-size: 0.8rem;
+            margin-left: 2px;
+            cursor: pointer;
+        }
+
+        /* Lists */
+        ul.custom-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 22px;
+        }
+
+        ul.custom-list li {
+            position: relative;
+            padding-left: 26px;
+            margin-bottom: 12px;
+            color: #cbd5e1;
+            font-size: 1.02rem;
+        }
+
+        ul.custom-list li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: #a855f7;
+            font-size: 0.85rem;
+            top: 2px;
+        }
+
+        /* Diagram Box */
+        .diagram-container {
+            background: rgba(10, 15, 30, 0.7);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 20px;
+            padding: 28px 20px;
+            margin: 35px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            font-family: monospace;
+            font-size: 0.88rem;
+            color: #c084fc;
+            overflow-x: auto;
+            white-space: pre;
+            line-height: 1.5;
+        }
+
+        /* Footnotes Section */
+        .footnotes-section {
+            margin-top: 45px;
+            padding-top: 22px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.15);
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        .footnotes-header {
+            font-weight: 600;
+            color: #cbd5e1;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footnote-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footnote-item {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            line-height: 1.65;
+        }
+
+        .footnote-item::before {
+            content: attr(data-num);
+            position: absolute;
+            left: 0;
+            color: #38bdf8;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-top: 35px;
+        }
+
+        @media (max-width: 768px) {
+            .essay-card {
+                padding: 25px 20px;
+            }
+            h1.chapter-main-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <article class="essay-card">
+            <span class="section-badge">Nội Dung Chính • Sườn Bài 5</span>
+            <h1 class="chapter-main-title">CHƯƠNG 1: KHÁI NIỆM AVIDYĀ VÀ MĀYĀ TRONG ADVAITA VEDĀNTA CỦA ŚAṄKARĀCĀRYA</h1>
+
+            <!-- 1.1 -->
+            <section>
+                <h2 class="section-sub-title">1.1. Bản chất của Māyā: Năng lực Che đậy (Āvaraṇa) và Phóng chiếu (Vikṣepa) Vũ trụ</h2>
+                
+                <p class="content-p">
+                    Trong hệ thống triết học Advaita Vedānta (Nhất nguyên vô biệt) do đại sư Śaṅkarācārya (Thương Yết La, 788–820) hệ thống hóa, thuật ngữ A-dvaita mang nghĩa ngữ âm là "không hai" (Nhất nguyên vô biệt), đại diện cho khuynh hướng bản thể luận siêu hình tuyệt đối<sup>1</sup>. Để giải thích sự hiện khởi của thế giới đa dạng trước giác quan con người mà không làm ảnh hưởng đến tính chất duy nhất, bất biến và thuần khiết của Nirguṇa Brahman (Phạm thiên Vô phẩm chất), Śaṅkarācārya đã phát triển học thuyết Vivartavāda (Huyễn mộng luận / Biến dịch ảo giác)<sup>2</sup>.
+                </p>
+
+                <h3 class="part-title">a. Nguồn gốc và Định vị Hiện tượng luận về Māyā</h3>
+                <p class="content-p">
+                    <strong>Năng lực ảo hóa của Đấng Hóa công (Īśvara):</strong> Māyā không phải là một thực thể độc lập đứng ngoài Brahman, mà là một năng lực (Śakti) huyền bí của Brahman ở cấp độ Saguṇa Brahman (Phạm thiên Hữu phẩm chất / Đấng Hóa công Īśvara)<sup>3</sup>. Śaṅkarācārya ví việc Īśvara sử dụng Māyā để kiến tạo nên vũ trụ như một "trò tiêu khiển" (Līlā) hay một phép ảo thuật tàn diệt, biến sợi dây thừng thành con rắn ảo giác trước mắt người xem ngây thơ.
+                </p>
+                <p class="content-p">
+                    <strong>Định danh Thực tại Mithyā:</strong> Cõi hiện tượng hữu hình (Jagat) do Māyā phóng chiếu được định danh là Mithyā (Huyễn giả / Ảo ảnh)<sup>5</sup>. Mithyā không có nghĩa là tuyệt đối hư vô (Asat - như "sừng thỏ" hay "hoa đốm giữa hư không"), vì thế giới vẫn có hiệu dụng thực tiễn về mặt cảm giác thế tục (Vyāvahārika-satya); nhưng nó mang tính huyễn giả vì hoàn toàn rỗng rang về mặt bản thể tuyệt đối (Pāramārthika-satya).
+                </p>
+
+                <!-- Diagram Sơ đồ Māyā -->
+                <div class="diagram-container">
+               BẢN THỂ TỐI HẬU: NIRGUṄA BRAHMAN
+                     (Thực tại Tuyệt đối)
+                              │
+                              ▼
+                NĂNG LỰC ẢO HÓA MĀYĀ (Līlā)
+            ┌─────────────────┴─────────────────┐
+            ▼                                   ▼
+  Āvaraṇa-śakti (Che đậy)             Vikṣepa-śakti (Phóng chiếu)
+            │                                   │
+            └─────────────────┬─────────────────┘
+                              │
+                              ▼
+                 CÕI MỘNG HIỆN TƯỢNG: JAGAT / MITHYĀ
+                (Thực tại Tương đối Vyāvahārika)
+                </div>
+
+                <h3 class="part-title">b. Hai Công năng Nhận thức luận Cốt tủy của Māyā</h3>
+                <p class="content-p">
+                    Sự vận hành của Māyā trong việc sản sinh ra cõi huyễn mộng dựa trên hai công năng nhận thức luận<sup>3</sup>:
+                </p>
+                <ul class="custom-list">
+                    <li>
+                        <strong>Āvaraṇa-śakti (Công năng che đậy):</strong> Đây là năng lực đóng vai trò làm mờ che, giấu đi bản chất chân thật bất nhị của Brahman. Giống như một đám mây nhỏ che khuất mặt trăng trên bầu trời, Āvaraṇa-śakti phủ bóng tối nhận thức luận, làm cho tâm thức không còn nhận biết được Bản thể hằng hữu nguyên sơ.
+                    </li>
+                    <li>
+                        <strong>Vikṣepa-śakti (Công năng phóng chiếu):</strong> Từ sự che đậy bản thể đó, Vikṣepa-śakti lập tức phóng chiếu ra vô số hình tướng (Rūpa), tên gọi (Nāma), thời gian và không gian, biến thực tại đơn nhất thành một bức tranh thế gian vũ trụ (Jagat) muôn hình vạn trạng.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 1.2 -->
+            <section>
+                <h2 class="section-sub-title">1.2. Avidyā ở Cấp độ Cá nhân: Sự Vướng kẹt của Jīva và Cơ chế Cưỡng gán (Adhyāsa)</h2>
+                
+                <h3 class="part-title">a. Mối quan hệ giữa Māyā (Vũ trụ) và Avidyā (Cá nhân)</h3>
+                <p class="content-p">
+                    Nếu Māyā được xem là năng lực ảo hóa ở quy mô toàn vũ trụ (Cosmic Illusion), thì ở cấp độ thực thể cá nhân, Māyā hiện khởi dưới dạng Avidyā (Vô minh cá nhân / Individual Ignorance)<sup>3</sup>.
+                </p>
+                <p class="content-p">
+                    <strong>Sự quên mất Bản chất Chân thật:</strong> Do chi phối của Avidyā, Jīva (Linh hồn cá nhân) bị vây hãm trong các lớp vỏ che đậy (Pañca-kośa) và các giới hạn phụ thuộc (Upādhi)<sup>3</sup>. Jīva lầm tưởng mình là một sinh thể hữu hạn, riêng biệt, chịu sự sinh, lão, bệnh, tử và chịu trôi lăn trong vòng xoáy luân hồi.
+                </p>
+
+                <!-- Diagram Cơ chế tạo nên sự vướng kẹt -->
+                <div class="diagram-container">
+========================================================================================
+CƠ CHẾ TẠO NÊN SỰ VƯỚNG KẸT CỦA JĪVA THEO ŚAṄKARĀCĀRYA
+========================================================================================
+• VÔ MINH CÁ NHÂN (Avidyā)   ──► Che lấp Tuệ giác bản hữu về Ātman.
+• CƯỠNG GÁN ĐIÊN ĐẢO (Adhyāsa)──► Áp đặt thuộc tính biến dịch của Thân-Cảnh lên Ātman.
+• ẨN DỤ DÂY TƯỞNG RẮN        ──► Nhìn sợi dây thừng (Brahman) gán tưởng con rắn (Māyā),
+                                   phát sinh sợ hãi và luân hồi khổ đau.
+========================================================================================
+                </div>
+
+                <h3 class="part-title">b. Cơ chế Cưỡng gán / Áp đặt Điên đảo (Adhyāsa)</h3>
+                <p class="content-p">
+                    Nguồn gốc sinh ra nỗi khổ đau hiện sinh của Jīva chính là cơ chế Adhyāsa (Sự cưỡng gán hay áp đặt nhầm lẫn giữa Chủ thể thực tồn Ātman và Đối tượng huyễn giả Thân & Cảnh)<sup>3</sup>.
+                </p>
+                <p class="content-p">
+                    <strong>Thí dụ Ẩn dụ "Dây tưởng Rắn" (Rajju-sarpa):</strong> Trong bóng chiều chạng vạng, một người nhìn thấy sợi dây thừng cuộn tròn liền phát sinh nỗi sợ hãi tột cùng vì áp đặt tưởng đó là con rắn độc. Con rắn ảo giác (Prātibhāsika) không hề thực tồn, nhưng cảm giác sợ hãi của người nhìn hoàn toàn là thật. Khi ngọn đèn trí tuệ chiếu soi, con rắn ảo giác biến mất; người đó nhận ra sợi dây thừng bản thể vẫn nguyên vẹn. Tương tự, do Adhyāsa, Jīva lầm tưởng các trạng thái đau đớn của thân xác (Annamaya-kośa) và sự buồn vui của tâm trí (Manomaya-kośa) là thuộc về Chân ngã Ātman, từ đó tự làm khổ mình trong giấc mộng thế gian.
+                </p>
+            </section>
+
+            <!-- 1.3 -->
+            <section>
+                <h2 class="section-sub-title">1.3. Phương pháp Triệt tiêu Avidyā/Māyā qua Con đường Trí tuệ (Jñāna-mārga)</h2>
+                
+                <h3 class="part-title">a. Vai trò Độc tôn của Trí tuệ (Jñāna)</h3>
+                <p class="content-p">
+                    Śaṅkarācārya khẳng định rằng các hình thức tế lễ ngoại tại (Karma), việc tu tập khổ hạnh hay tín ngưỡng sùng kính suông (Bhakti) tuy có giá trị làm lắng tịnh tâm trí ở cấp độ Saguṇa Brahman, nhưng tự thân chúng không thể tiêu diệt Avidyā<sup>3</sup>. Vì bóng tối Vô minh chỉ có thể bị xua tan bằng ánh sáng của Trí tuệ, nên con đường Trí tuệ—Jñāna-mārga—là con đường duy nhất và trực tiếp dẫn đến giải thoát hoàn toàn (Mokṣa)<sup>3, 5</sup>.
+                </p>
+
+                <h3 class="part-title">b. Tiến trình Phủ định Biện chứng "Neti, Neti"</h3>
+                <p class="content-p">
+                    Để bóc tách năng lực che đậy Māyā, hành giả vận dụng lưỡi dao biện chứng Neti, Neti ("Không phải cái này, không phải cái kia")<sup>2</sup>:
+                </p>
+                <ul class="custom-list">
+                    <li>Phủ định thân xác vật lý: "Thân này không phải Ātman" (Neti).</li>
+                    <li>Phủ định cảm xúc và suy nghĩ: "Tâm trí biến dịch này không phải Ātman" (Neti).</li>
+                    <li>Phủ định mọi hình tướng thế gian: "Cõi cảnh huyễn hóa này không phải Ātman" (Neti).</li>
+                </ul>
+
+                <h3 class="part-title">c. Ngộ nhập Đại ngôn Mệnh đề (Mahāvākya) và Trạng thái Jīvanmukti</h3>
+                <p class="content-p">
+                    Khi mọi lớp vỏ bọc ảo ảnh bị gạt bỏ hoàn toàn, Vô minh Avidyā bị triệt tiêu, Tánh giác bừng sáng đưa hành giả trực nhận các đại ngôn mệnh đề: "Aham Brahmāsmi" (Ta chính là Brahman) và "Tat Tvam Asi" (Ngươi chính là Cái Đó)<sup>2</sup>.
+                </p>
+                <p class="content-p">
+                    Sự giải thoát (Mokṣa) chính là sự "trở về" nhận ra thực tại bản hữu (Realization)<sup>5</sup>. Bậc giải thoát đương sinh (Jīvanmukta) vẫn sống giữa cõi đời (Vyāvahārika), nhưng tâm thức đứng vững trên nền Bản thể Brahman, thấu suốt cõi Māyā chỉ là bóng dáng huyễn mộng, không còn bị bất kỳ điên đảo nhận thức nào trói buộc<sup>5, 6</sup>.
+                </p>
+            </section>
+
+            <!-- Footnotes -->
+            <div class="footnotes-section">
+                <div class="footnotes-header">
+                    <span>📌 CHÚ THÍCH & TRÍCH DẪN NGUỒN (FOOTNOTES CHO CHƯƠNG 1 - SƯỜN BÀI 5)</span>
+                </div>
+                <ul class="footnote-list">
+                    <li class="footnote-item" data-num="1">
+                        Lê Xuân Khoa (1972), Nhập môn Triết học Ấn Độ, NXB Trung tâm Học liệu Bộ Giáo dục, Sài Gòn, tr. 185–192; đối chiếu bài giảng "1. Buổi 1 (18-01-2026).mp3" & "2. Buổi 2 (ngày 18-01-2026).mp3".
+                    </li>
+                    <li class="footnote-item" data-num="2">
+                        Śaṅkarācārya, Brahmasūtra-bhāṣya (Chú giải Kinh Brahma), Adhyāya 1, Pāda 1; xem thêm Swami Gambhirananda (dịch) (1965), Brahma Sutra Bhasya of Shankaracharya, Advaita Ashrama, Kolkata, tr. 14–25; đối chiếu bài giảng "2. Buổi 2 (ngày 18-01-2026).mp3" & "3. Buổi 3 (ngày 31-3-2026).mp3".
+                    </li>
+                    <li class="footnote-item" data-num="3">
+                        Śaṅkarācārya, Vivekacūḍāmaṇi (Trí tuệ minh châu kim cương), Kārikā 108–115; đối chiếu bài giảng "2. Buổi 2 (ngày 18-01-2026).mp3", "3. Buổi 3 (ngày 31-3-2026).mp3" & "3. Buổi học ngày 21-9-2026.mp3" (Phân tích các công phu Āvaraṇa, Vikṣepa của Māyā, khái niệm Jīva, Adhyāsa và vai trò của Jñāna).
+                    </li>
+                    <li class="footnote-item" data-num="4">
+                        Thích Chơn Thiện (1999), Pāli Phật học Đại cương, NXB Tôn Giáo, Hà Nội, tr. 84–96; đối chiếu bài giảng "4b. Buổi học ngày 23-9-2026.mp3" (Làm rõ sự phân định ranh giới giữa Vô minh Avidyā - nguyên nhân gốc Mūla-kāraṇa và Điên đảo nhận thức Vipallāsa - kết quả sinh khởi).
+                    </li>
+                    <li class="footnote-item" data-num="5">
+                        Radhakrishnan, S. (1999), Indian Philosophy, Vol. 2, Oxford University Press, New Delhi, tr. 480–492; đối chiếu bài giảng "2. Buổi học ngày 16-9-2026.mp3" & "3. Buổi 3 (ngày 31-3-2026).mp3".
+                    </li>
+                    <li class="footnote-item" data-num="6">
+                        Viện Triết học (2004), Lịch sử Triết học Phương Đông, NXB Chính trị Quốc gia, Hà Nội, tr. 312–318; đối chiếu bài giảng "1. Buổi 1 (18-01-2026).mp3" & "6. Buổi 6 (8-4-2026).mp3".
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+        <footer>
+            <p>© Giao diện đọc tiểu luận trực tuyến • Cosmic Theme</p>
+        </footer>
+    </div>
+
+</body>
+</html>
